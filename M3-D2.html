@@ -50,19 +50,19 @@
         console.log(response);
         return response.json()
       })
-      .then(music => {
-      listMusic(music)
-
+      .then(b => {
+      listMusic(b.data)
+        console.log(b)
       })
       .catch(err => {
         console.error(err);
       });
-      function listMusic (music) {
+      function listMusic (a) {
         let unordered = document.querySelector("ul")
         for(let i = 0; i<25; i++)
         {
           unordered.innerHTML += `
-         <li>${data[i].title_short}</li> 
+         <li>${a[i].title_short}</li> 
           
           `
         }
